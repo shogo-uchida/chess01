@@ -72,7 +72,7 @@ $(function() {
   $('#clearBoardBtn').click(board.clear)
   $('#playAgainBtn').click(board.clear)
 
-  $('#startPositionBtn').on('click', board.start)
+  $('#startPositionBtn').click(board.start)
 
 
 // hide the button again
