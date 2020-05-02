@@ -18,6 +18,10 @@ $(function() {
   	if (game.in_checkmate() === true || game.in_draw() === true ||
   			piece.search(/^b/) !== -1) {
         alert('check mate');
+
+        // the button will appear
+        $('.checkmate').removeClass('checkmate');
+
   	      return false;
   	    }
   };
@@ -32,6 +36,7 @@ $(function() {
     var randomIndex = Math.floor(Math.random() * possibleMoves.length);
     game.move(possibleMoves[randomIndex]);
     board.position(game.fen());
+
   };
    
   var onDrop = function(source, target) {
@@ -65,8 +70,15 @@ $(function() {
 
 
   $('#clearBoardBtn').click(board.clear)
+  $('#playAgainBtn').click(board.clear)
 
   $('#startPositionBtn').on('click', board.start)
+
+
+// hide the button again
+  $('.hideBtn').click(function() {
+    $('.active').removeClass('active');
+  });
 
 });
 
